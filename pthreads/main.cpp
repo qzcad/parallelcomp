@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 struct NumbersStats
 {
     long number;
@@ -58,7 +59,9 @@ void *load_numbers(void *arg)
     stats_pointer->std_diff = sqrt(stats_pointer->std_diff / stats_pointer->number);
     file.close();
     pthread_exit(NULL);
+    return NULL;
 }
+
 
 struct TextStats
 {
@@ -116,7 +119,9 @@ void *load_chars(void *arg)
     }
     file.close();
     pthread_exit(NULL);
+    return NULL;
 }
+
 
 int main(int argc, char * argv[])
 {
